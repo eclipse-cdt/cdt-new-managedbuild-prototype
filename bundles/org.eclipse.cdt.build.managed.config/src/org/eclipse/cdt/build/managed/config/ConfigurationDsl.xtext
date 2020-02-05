@@ -1,0 +1,92 @@
+grammar org.eclipse.cdt.build.managed.config.ConfigurationDsl with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.eclipse.org/cdt/build/managed/toolchain/ToolchainDsl" as toolchainDsl
+
+generate configurationDsl "http://www.eclipse.org/cdt/build/managed/config/ConfigurationDsl"
+
+ConfigurationFile:
+	(includes+=Include)*
+	(configuration=Configuration);
+
+Configuration:
+	{Configuration}
+	'configuration' name=ID (('extends' parent=[Configuration])|('implements' toolchain=[toolchainDsl::Toolchain])) '{'
+	(properties+=Property)*
+	(artifacts+=Artifact)*
+	'}';
+
+Path:
+	{Path}
+	'path' path=STRING '{'
+		(options+=OptionSetting)*
+		(paths+=Path)*
+	'}';
+	
+Artifact:
+	{Artifact}
+	'artifact' name=STRING '{'
+	(options+=OptionSetting)*
+	(paths+=Path)*
+	'}';	
+
+OptionSetting:
+	StringOptionSetting | StringArrayOptionSetting | IdOptionSetting | BoolOptionSetting
+;
+
+StringOptionSetting returns OptionSetting:
+	'set' option=[toolchainDsl::Option|QualifiedName] ':' value=StringLiteral;
+	
+StringArrayOptionSetting returns OptionSetting:
+	'set' option=[toolchainDsl::Option|QualifiedName] ':' value=StringArray;
+
+IdOptionSetting returns OptionSetting:
+	'set' option=[toolchainDsl::Option|QualifiedName] ':' value=IdLiteral;
+
+BoolOptionSetting returns OptionSetting:
+	'set' option=[toolchainDsl::Option|QualifiedName] ':' value=BoolLiteral;
+Include:
+	'include' importURI=STRING
+;
+
+IntLiteral: value = INT;
+BoolLiteral: value = BOOL;
+IdLiteral: value = ID;
+StringLiteral: value = STRING;
+StringArray: '[' (values+=STRING ("," values+=STRING)*) ']';
+
+Property:
+	StringProperty|StringArrayProperty|BoolProperty|IdProperty|IntProperty
+;
+
+StringProperty returns Property:
+	name= ID ':' value= StringLiteral
+;
+
+StringArrayProperty returns Property:
+	name= ID ':' value= StringArray
+;
+
+BoolProperty returns Property:
+	name= ID ':' value= BoolLiteral
+;
+
+IdProperty returns Property:
+	name= ID ':' value= IdLiteral
+;
+
+IntProperty returns Property:
+	name= ID ':' value= IntLiteral
+;
+terminal BOOL returns ecore::EBoolean: 'true' | 'false';
+
+
+//NamespaceDeclaration:
+//	'namespace' name=QualifiedName;
+//
+QualifiedName:
+	ID ('.' ID)*;
+//
+QualifiedNameWithWildcard:
+	QualifiedName '.*'?;
+

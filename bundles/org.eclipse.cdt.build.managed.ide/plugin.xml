@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            class="org.eclipse.cdt.build.managed.ide.Factory1"
+            contentTypeIdentifier="cdt">
+      </parser>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.protocol_parser">
+      <parser
+            class="org.eclipse.cdt.build.managed.ide.Factory1"
+            protocolName="cdt">
+      </parser>
+   </extension>
+   <extension
+         point="org.eclipse.xtext.protocol_resourceServiceProvider">
+      <resourceServiceProvider
+            class="org.eclipse.cdt.build.managed.ide.ResourceServiceProvider1"
+            protocolName="cdt">
+      </resourceServiceProvider>
+   </extension>
+   <extension
+         point="org.eclipse.xtext.protocol_resourceServiceProvider">
+      <resourceServiceProvider
+            class="org.eclipse.cdt.build.managed.ide.ResourceServiceProvider1"
+            protocolName="org.eclipse.cdt.build.managed.ide.resourceServiceProvider1">
+      </resourceServiceProvider>
+   </extension>
+
+</plugin>
