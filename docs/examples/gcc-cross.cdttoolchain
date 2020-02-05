@@ -1,0 +1,82 @@
+toolchain cross_gcc {
+	displayName: "Cross GCC"
+	option test as StringList {
+		displayName: "Assembler Flags"
+	}
+	tool assembler {
+		displayName: "GCC Assembler"
+		command: "as"
+		argsPattern: "${flags} -o ${output} ${inputs}"
+		multipleInputs: false 
+		rspFileCommand: "@${resp_file}"
+		rspFileContent: "${args}"
+		primaryInputType: "*.asm"
+		//outputType: "o"
+		inherit test {
+			
+		}
+		option flags as StringList {
+			displayName: "Assembler Flags"
+		}
+		option includePaths as FileList {  //-I
+			displayName: "Include Paths"
+			directories: true
+		}
+		option supressWarnings as Bool { //-W
+			displayName: "Supress Warnings"
+		}
+		option version as Bool { //-v
+			displayName: "Display version"
+		}
+	}
+	tool compiler_c {
+		displayName: "GCC C Compiler"
+		command: "gcc"
+		argsPattern: "${flags} -o ${output} ${inputs}"
+		multipleInputs: false
+		rspFileCommand: "@${resp_file}"
+		rspFileContent: "${args}"
+		primaryInputType: "*.asm"
+		//outputType: "o"
+		option includeFiles as FileList {  //-include
+			displayName: "Include Paths"
+			directories: true
+		}
+		option includePaths as DirectoryList {  //-I
+			displayName: "Include Paths"
+		}
+		option optLevel as Enum {  //
+			displayName: "Optimisation Level"
+		}
+		option optFags as StringList {
+			displayName: "Optimisation Flags"
+		}
+		option debugLevel as Enum {  //
+			displayName: "Debug Level"
+			/*
+			 * None: ""
+			 * Min: "-g1"
+			 * Def: "-g"
+			 * Max: "-g3"
+			 */
+		}
+		option debugFags as StringList {
+			displayName: "Debug Flags"
+		}
+		option debugProf as Bool { //-p
+			displayName: "Profiling"
+		}
+		option debugProfG as Bool { //-pg
+			displayName: "Profiling (G)"
+		}
+		option debugCoverage as Bool { //--ftest-coverage -fprofile-arcs
+			displayName: "Code Coverage"
+		}
+		option flags as StringList {
+			displayName: "Other Flags"
+		}
+		option supressWarnings as Bool { //-W
+			displayName: "Supress Warnings"
+		}
+	}
+}

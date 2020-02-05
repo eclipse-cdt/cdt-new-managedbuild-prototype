@@ -1,0 +1,17 @@
+include "gcc-cross2.cdttoolchain"
+configuration test implements cross_gcc2 {
+	artifact "test.elf" {
+		set assembler.flags: ""
+		set assembler.includePaths: ["", ""]
+		set assembler.flags: ""
+		set assember2.flags2: ""	
+		set compiler_c.debugCoverage: false
+		set assembler.includePaths:  ["", ""]
+		path "" {		
+			set assembler.flags: ""
+			set compiler_c.debugCoverage: ""
+			set assember2.flags2: ""
+			set assember2.flags2: ""
+		}
+	}
+}

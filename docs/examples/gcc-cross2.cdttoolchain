@@ -1,0 +1,27 @@
+include "gcc-cross.cdttoolchain"
+toolchain cross_gcc2 extends cross_gcc {
+	displayName: "Cross GCC"
+	tool assember2 extends assembler {
+		option flags2 as StringList {
+			displayName: "Assembler Flags"
+		}
+	}
+//	tool assembler {
+//		displayName: "GCC Assembler"
+//		command: "as"
+//		argsPattern: "${flags} ${inputs}"
+//		multipleInputs: false
+//		rspFileCommand: "@${resp_file}"
+//		rspFileContent: "${args}"
+//		primaryInputType: "*.asm"
+//		option flags as StringList {
+//			displayName: "Assembler Flags"
+//		}
+//		option includePaths as FileList { 
+//			displayName: "Assembler Flags"
+//			directories: true
+//		}
+//	}
+}
+
+
