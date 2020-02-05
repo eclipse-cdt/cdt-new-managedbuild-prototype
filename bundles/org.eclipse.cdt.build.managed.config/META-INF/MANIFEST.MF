@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.eclipse.cdt.build.managed.config
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.cdt.build.managed.config
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.eclipse.cdt.build.managed.config; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.cdt.build.managed.toolchain;bundle-version="1.0.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.eclipse.cdt.build.managed.toolchain.ide;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.eclipse.cdt.build.managed.config.scoping,
+ org.eclipse.cdt.build.managed.config.parser.antlr,
+ org.eclipse.cdt.build.managed.config.validation,
+ org.eclipse.cdt.build.managed.config,
+ org.eclipse.cdt.build.managed.config.services,
+ org.eclipse.cdt.build.managed.config.configurationDsl,
+ org.eclipse.cdt.build.managed.config.configurationDsl.impl,
+ org.eclipse.cdt.build.managed.config.configurationDsl.util,
+ org.eclipse.cdt.build.managed.config.parser.antlr.internal,
+ org.eclipse.cdt.build.managed.config.serializer
+Import-Package: org.apache.log4j

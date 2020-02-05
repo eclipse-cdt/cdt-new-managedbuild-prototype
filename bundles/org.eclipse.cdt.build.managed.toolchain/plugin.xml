@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.eclipse.org/cdt/build/managed/toolchain/ToolchainDsl"
+			class = "org.eclipse.cdt.build.managed.toolchain.toolchainDsl.ToolchainDslPackage"
+			genModel = "model/generated/ToolchainDsl.genmodel" />
+	</extension>
+</plugin>

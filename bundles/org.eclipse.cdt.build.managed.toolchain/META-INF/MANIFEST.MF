@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.eclipse.cdt.build.managed.toolchain
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.cdt.build.managed.toolchain
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.eclipse.cdt.build.managed.toolchain; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.eclipse.cdt.build.managed.toolchain.parser.antlr.internal,
+ org.eclipse.cdt.build.managed.toolchain.scoping,
+ org.eclipse.cdt.build.managed.toolchain.toolchainDsl.impl,
+ org.eclipse.cdt.build.managed.toolchain.serializer,
+ org.eclipse.cdt.build.managed.toolchain.toolchainDsl.util,
+ org.eclipse.cdt.build.managed.toolchain.parser.antlr,
+ org.eclipse.cdt.build.managed.toolchain.validation,
+ org.eclipse.cdt.build.managed.toolchain.services,
+ org.eclipse.cdt.build.managed.toolchain,
+ org.eclipse.cdt.build.managed.toolchain.toolchainDsl,
+ org.eclipse.cdt.build.managed.toolchain.resource
+Import-Package: org.apache.log4j
