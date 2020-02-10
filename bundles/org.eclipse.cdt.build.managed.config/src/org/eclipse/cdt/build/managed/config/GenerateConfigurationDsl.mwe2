@@ -4,7 +4,7 @@ import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
 
 var rootPath = ".."
-var testRootPath = rootPath
+var testRootPath = "${rootPath}/../tests"
 
 Workflow {
 	
@@ -15,14 +15,14 @@ Workflow {
 				rootPath = rootPath
 				runtimeTest = {
 					enabled = true
-					root = testRootPath
+					root = "${testRootPath}/org.eclipse.cdt.build.managed.config.tests"
 				}
 				eclipsePlugin = {
 					enabled = true
 				}
 				eclipsePluginTest = {
 					enabled = true
-					root = testRootPath
+					root = "${testRootPath}/org.eclipse.cdt.build.managed.config.ui.tests"
 				}
 				createEclipseMetaData = true
 			}
@@ -31,7 +31,7 @@ Workflow {
 				lineDelimiter = "\n"
 				fileHeader = 
 "/********************************************************************************
- * Copyright (c) 2019 Renesas Electronics Europe Ltd and others
+ * Copyright (c) 2020 Renesas Electronics Europe GmbH and others
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
