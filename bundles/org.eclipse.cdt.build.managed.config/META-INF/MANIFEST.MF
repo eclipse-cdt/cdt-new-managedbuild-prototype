@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Automatic-Module-Name: org.eclipse.cdt.build.managed.config
 Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.cdt.build.managed.config
-Bundle-Vendor: My Company
+Bundle-Vendor: Eclipse CDT
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.eclipse.cdt.build.managed.config; singleton:=true
 Bundle-ActivationPolicy: lazy
