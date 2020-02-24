@@ -9,6 +9,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>bundles/org.eclipse.cdt.build.managed.framework</module>
+		<module>bundles/org.eclipse.cdt.build.managed.ninja</module>
 		<module>bundles/org.eclipse.cdt.build.managed.toolchain</module>
 		<module>bundles/org.eclipse.cdt.build.managed.toolchain.ide</module>
 		<module>bundles/org.eclipse.cdt.build.managed.toolchain.ui</module>

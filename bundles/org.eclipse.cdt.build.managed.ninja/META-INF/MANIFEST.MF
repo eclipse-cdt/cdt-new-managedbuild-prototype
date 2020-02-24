@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ninja Managed Build Integration
+Bundle-SymbolicName: org.eclipse.cdt.build.managed.ninja;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Eclipse CDT
+Automatic-Module-Name: org.eclipse.cdt.build.managed.ninja
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.cdt.build.managed.framework;bundle-version="[1.0.0,2.0.0)"

@@ -4,8 +4,8 @@ Prototype of new Managed Build system for Eclipse CDT
 ## Overall Aims
 * Replace existing Managed Build in CDT with new simple framework providing GUI managing of build settings
 * Allow use from outside CDT, both in CI & new editors such as Eclipse Theia & VS Code
-* Allow more extensibility to support multiple build systems & toolchains
-
+* Allow more extensibility to support multiple external build systems & toolchains
+* Simplify CDT implementation to ensure maintainability
 More information can be found in [Outline](docs/outline.md)
 
 ## Outline Design
@@ -17,6 +17,7 @@ More information can be found in [Outline](docs/outline.md)
 
 ## Out of scope
 * Internal builder - Focus is on integration with external build systems. Though framework will be designed to allow an internal build implementation to be developed as an extension
+* Modeling dependencies between source files or determining tool ordering - If this is required for a particular build engine then must be implemented in support extension rather than main framework
 
 ## Current progress
 * Prototype DSLs for toolchain & configuration. See examples in docs/examples
@@ -30,7 +31,6 @@ Steps:
  * Right click on org.eclipse.cdt.build.managed.toolchain/src/org/eclipse/cdt/build/managed/toolchain/GenerateToolchainDsl.mwe2 & select Run As -> MWE2 Workflow
  * Repeat with GenerateConfigurationDsl.mwe2
  * Select Build -> Clean and clean the workspace
-
 
 ## More infomation
  * [Outline](docs/outline.md)
