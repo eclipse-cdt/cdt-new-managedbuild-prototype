@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Core Manged Build Framework
+Bundle-SymbolicName: org.eclipse.cdt.build.managed.framework;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Eclipse CDT
+Automatic-Module-Name: org.eclipse.cdt.build.managed.framework
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.cdt.build.managed.framework.buildengine
