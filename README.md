@@ -1,6 +1,9 @@
 # cdt-new-managedbuild-prototype
 Prototype of new Managed Build system for Eclipse CDT
 
+[![Eclipse License](https://img.shields.io/badge/license-EPL--2.0-brightgreen.svg)](https://github.com/eclipse-cdt/cdt-new-managedbuild-prototype/blob/master/LICENSE)
+
+
 ## Overall Aims
 * Replace existing Managed Build in CDT with new simple framework providing GUI managing of build settings
 * Allow use from outside CDT, both in CI & new editors such as Eclipse Theia & VS Code
