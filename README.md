@@ -1,7 +1,5 @@
 # cdt-new-managedbuild-prototype
 Prototype of new Managed Build system for Eclipse CDT
-[![Eclipse License](https://img.shields.io/badge/license-EPL--2.0-brightgreen.svg)](https://github.com/eclipse-cdt/cdt-new-managedbuild-prototype/blob/master/LICENSE)
-
 
 [![Eclipse License](https://img.shields.io/badge/license-EPL--2.0-brightgreen.svg)](https://github.com/eclipse-cdt/cdt-new-managedbuild-prototype/blob/master/LICENSE)
 
